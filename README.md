@@ -29,25 +29,34 @@ This is a responsive frontend application built with React and Tailwind CSS for 
 ## 📦 Getting Started
 
 ### 1. Clone this repository
-
+```
 git clone <your-repo-url>
 cd <repo-folder>/ui
+```
 
 ### 2. Install dependencies
+```
 npm install
+```
 
 ### 3. Start the development server
+```
 npm run dev
+```
 
 The app will run at http://localhost:5173
 
 ## Backend Setup
 Make sure you have the FastAPI backend running locally:
-uvicorn main:app --reload
-It must be accessible at http://localhost:8000.
+```
+cd <repo-folder>/ui
+pip install -r requirements.txt
+fastapi dev main.py
+```
+It must be accessible at http://127.0.0.1:8000.
 
 If CORS errors occur, ensure the backend includes:
-
+```
 from fastapi.middleware.cors import CORSMiddleware
 
 app.add_middleware(
@@ -57,28 +66,17 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
-
-## Project Structure
-ui/
-├── src/
-│   ├── App.jsx
-│   ├── main.jsx
-│   ├── index.css
-│   └── ...
-├── public/
-├── package.json
-├── tailwind.config.js
-└── README.md
+```
 
 ## Evaluation Criteria Match
-Requirement	Implemented
-Clean code & structure	- Yes
-Filters by title	- Yes
-Pagination (14 per page)	- Yes
-Responsive design	- Yes
-Shows status (Scheduled, etc)	- Yes
-Bonus: filter by other fields	- Yes (description & owner)
-Bonus: URL sync	- Yes
+Requirement	Implemented  
+Clean code & structure	- Yes  
+Filters by title	- Yes  
+Pagination (14 per page)	- Yes  
+Responsive design	- Yes  
+Shows status (Scheduled, etc)	- Yes  
+Bonus: filter by other fields	- Yes (description & owner)  
+Bonus: URL sync	- Yes  
 
 ## Future Enhancements (If Time Permitted)
  - Debounce search input for performance
