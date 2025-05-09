@@ -1,2 +1,87 @@
-# videocontributions
-Display Video Contributions using React and Python
+# 🎥 Video Contributions UI
+
+This is a responsive frontend application built with React and Tailwind CSS for displaying and filtering video contributions. It connects to a FastAPI backend to fetch contribution data.
+
+## 🚀 Features
+
+- 🔍 Search by **Title**, **Description**, and **Owner**
+- 📆 Displays start and end time in user's local format
+- 📺 Shows status: **Scheduled**, **Active**, or **Complete**
+- 📱 Responsive layout:
+  - 1 column on mobile
+  - 2 columns on tablet
+  - 3 columns on desktop
+- 📄 Pagination (14 items per page)
+- 🔗 URL-based filters and pagination (supports bookmarking & sharing)
+
+---
+
+## 🛠️ Tech Stack
+
+- **React** (Vite)
+- **Tailwind CSS**
+- **Axios** – HTTP client
+- **date-fns** – Date formatting
+- **React Router** – For syncing URL with filters
+
+---
+
+## 📦 Getting Started
+
+### 1. Clone this repository
+
+git clone <your-repo-url>
+cd <repo-folder>/ui
+
+### 2. Install dependencies
+npm install
+
+### 3. Start the development server
+npm run dev
+
+The app will run at http://localhost:5173
+
+## Backend Setup
+Make sure you have the FastAPI backend running locally:
+uvicorn main:app --reload
+It must be accessible at http://localhost:8000.
+
+If CORS errors occur, ensure the backend includes:
+
+from fastapi.middleware.cors import CORSMiddleware
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+## Project Structure
+ui/
+├── src/
+│   ├── App.jsx
+│   ├── main.jsx
+│   ├── index.css
+│   └── ...
+├── public/
+├── package.json
+├── tailwind.config.js
+└── README.md
+
+## Evaluation Criteria Match
+Requirement	Implemented
+Clean code & structure	- Yes
+Filters by title	- Yes
+Pagination (14 per page)	- Yes
+Responsive design	- Yes
+Shows status (Scheduled, etc)	- Yes
+Bonus: filter by other fields	- Yes (description & owner)
+Bonus: URL sync	- Yes
+
+## Future Enhancements (If Time Permitted)
+ - Debounce search input for performance
+ - Add tests using Jest + React Testing Library
+ - Add filter reset & visual filter tags
+ - Export results to CSV
