@@ -39,7 +39,13 @@ cd <repo-folder>/ui
 npm install
 ```
 
-### 3. Start the development server
+### 3. Install tailwind css packages
+```
+npm install -D tailwindcss@3 postcss autoprefixer
+npx tailwindcss init -p
+```
+
+### 4. Start the development server
 ```
 npm run dev
 ```
