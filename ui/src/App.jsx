@@ -57,7 +57,7 @@ export default function App() {
   };
 
   return (
-    <div className="p-6 max-w-screen-xl mx-auto font-sans bg-gray-50 min-h-screen">
+    <div className="p-6 max-w-screen-l mx-auto font-sans bg-gray-50 min-h-screen">
       <h1 className="text-4xl font-extrabold text-gray-800 mb-6 text-center">🎥 Video Contributions</h1>
 
       <div className="mb-6 grid grid-cols-1 sm:grid-cols-3 gap-4">
@@ -112,7 +112,7 @@ export default function App() {
         <button
           onClick={() => setPage((p) => Math.max(0, p - 1))}
           disabled={page === 0}
-          className="px-4 py-2 bg-white border border-gray-300 rounded-lg shadow-sm hover:bg-gray-100 disabled:opacity-50"
+          className="px-4 py-2 text-black bg-white border border-gray-300 rounded-lg shadow-sm hover:bg-gray-100 disabled:opacity-50"
         >
           ← Previous
         </button>
@@ -120,7 +120,7 @@ export default function App() {
         <button
           onClick={() => setPage((p) => (p + 1) * PAGE_LIMIT < total ? p + 1 : p)}
           disabled={(page + 1) * PAGE_LIMIT >= total}
-          className="px-4 py-2 bg-white border border-gray-300 rounded-lg shadow-sm hover:bg-gray-100 disabled:opacity-50"
+          className="px-4 py-2 text-black bg-white border border-gray-300 rounded-lg shadow-sm hover:bg-gray-100 disabled:opacity-50"
         >
           Next →
         </button>
